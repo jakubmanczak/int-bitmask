@@ -1,0 +1,24 @@
+{
+	"name": "int-bitmask",
+	"version": "0.0.1",
+	"description": "Get boolean flags from a number.",
+	"main": "./dist/index.js",
+	"scripts": {
+		"start": "tsc && node .",
+		"build": "tsc",
+		"serve": "node ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jakubmanczak/int-bitmask.git"
+	},
+	"author": "jakubmanczak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/jakubmanczak/int-bitmask/issues"
+	},
+	"homepage": "https://github.com/jakubmanczak/int-bitmask#readme",
+	"devDependencies": {
+		"typescript": "^4.9.4"
+	}
+}
