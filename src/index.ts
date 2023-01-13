@@ -37,4 +37,11 @@ function setBit(num: number, bit: number, bitState: 0 | 1): number | Error {
 	return binaryStringToNum(binary.reverse().join(""));
 }
 
-export { checkBit, setBit };
+function toggleBit(num: number, bit: number): void | Error {
+	if (num < 0) return Error("Checked number is below zero.");
+	if (bit < 0) return Error("Bit number is below zero.");
+
+	setBit(num, bit, checkBit(num, bit) ? 0 : 1);
+}
+
+export { checkBit, setBit, toggleBit };
