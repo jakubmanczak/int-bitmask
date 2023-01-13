@@ -4,6 +4,10 @@
 	"description": "Get Boolean flags from a Number.",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
+	"files": [
+		"./dist/*",
+		"./dist/**/*"
+	],
 	"scripts": {
 		"start": "npm run build && npm run serve",
 		"build": "rm -fr ./dist/ && tsc",
