@@ -5,9 +5,10 @@
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"scripts": {
-		"start": "tsc && node .",
-		"build": "tsc",
-		"serve": "node ."
+		"start": "npm run build && npm run serve",
+		"build": "rm -fr ./dist/ && tsc",
+		"serve": "node .",
+		"test": "echo \"No tests implemented.\""
 	},
 	"repository": {
 		"type": "git",
