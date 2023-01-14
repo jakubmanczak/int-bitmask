@@ -17,9 +17,9 @@ function numToBinaryString(num: number): string {
 }
 
 function checkBit(num: number, bit: number): boolean | null | Error {
-	if (num < 0 || bit < 0) return Error(errNumberNegative);
+	if (num < 0 || bit < 0) throw new Error(errNumberNegative);
 	if (!Number.isInteger(num) || !Number.isInteger(bit))
-		return Error(errNumberFloat);
+		throw new Error(errNumberFloat);
 
 	let binary = numToBinaryString(num);
 
@@ -29,9 +29,9 @@ function checkBit(num: number, bit: number): boolean | null | Error {
 }
 
 function setBit(num: number, bit: number, bitState: 0 | 1): number | Error {
-	if (num < 0 || bit < 0) return Error(errNumberNegative);
+	if (num < 0 || bit < 0) throw new Error(errNumberNegative);
 	if (!Number.isInteger(num) || !Number.isInteger(bit))
-		return Error(errNumberFloat);
+		throw new Error(errNumberFloat);
 
 	let binary = numToBinaryString(num).split("").reverse();
 	while (bit > binary.length) {
@@ -43,9 +43,9 @@ function setBit(num: number, bit: number, bitState: 0 | 1): number | Error {
 }
 
 function toggleBit(num: number, bit: number): void | Error {
-	if (num < 0 || bit < 0) return Error(errNumberNegative);
+	if (num < 0 || bit < 0) throw new Error(errNumberNegative);
 	if (!Number.isInteger(num) || !Number.isInteger(bit))
-		return Error(errNumberFloat);
+		throw new Error(errNumberFloat);
 
 	setBit(num, bit, checkBit(num, bit) ? 0 : 1);
 }
