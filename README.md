@@ -9,7 +9,9 @@ Get Boolean flags from a Number in node.
 
 ### checkBit()
 
-Returns a boolean, null or Error depending on checked bit in a given number.
+Returns true, false or null depending on checked bit in a given number.
+
+First arg: number. Second arg: bit index.
 
 Sample usage:
 
@@ -23,4 +25,38 @@ checkBit(65, 7); // returns null, which is falsy, as the eighth bit (index 7) is
 ---
 checkBit(-1, 0) // throws [Error: Inputs cannot be negative.]
 checkBit(2.5, 0.5) // throws [Error: Inputs must be integers.]
+```
+
+### setBit()
+
+Takes a number, changes the given bit and returns the new number.
+
+First arg: number. Second arg: bit index. Third arg: new bit state (0 | 1).
+
+Sample usage:
+
+```ts
+setBit(64, 0, 1); // returns 65
+setBit(128, 0, 1); // returns 129
+setBit(64, 6, 0); // returns 0
+---
+setBit(-1, 0, 1) // throws [Error: Inputs cannot be negative.]
+setBit(2.5, 0.5, 0) // throws [Error: Inputs must be integers.]
+```
+
+### setBit()
+
+Takes a number, changes the given bit and returns the new number.
+
+First arg: number. Second arg: bit index. Third arg: new bit state (0 | 1).
+
+Sample usage:
+
+```ts
+setBit(64, 0, 1); // returns 65
+setBit(128, 0, 1); // returns 129
+setBit(64, 6, 0); // returns 0
+---
+setBit(-1, 0, 1) // throws [Error: Inputs cannot be negative.]
+setBit(2.5, 0.5, 0) // throws [Error: Inputs must be integers.]
 ```
