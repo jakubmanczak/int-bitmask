@@ -16,7 +16,7 @@ function numToBinaryString(num: number): string {
 	return num.toString(2);
 }
 
-function checkBit(num: number, bit: number): boolean | null | Error {
+function checkBit(num: number, bit: number): boolean | null {
 	if (num < 0 || bit < 0) throw new Error(errNumberNegative);
 	if (!Number.isInteger(num) || !Number.isInteger(bit))
 		throw new Error(errNumberFloat);
@@ -28,7 +28,7 @@ function checkBit(num: number, bit: number): boolean | null | Error {
 	return binary[binary.length - 1 - bit] === "1" ? true : false;
 }
 
-function setBit(num: number, bit: number, bitState: 0 | 1): number | Error {
+function setBit(num: number, bit: number, bitState: 0 | 1): number {
 	if (num < 0 || bit < 0) throw new Error(errNumberNegative);
 	if (!Number.isInteger(num) || !Number.isInteger(bit))
 		throw new Error(errNumberFloat);
@@ -42,12 +42,12 @@ function setBit(num: number, bit: number, bitState: 0 | 1): number | Error {
 	return binaryStringToNum(binary.reverse().join(""));
 }
 
-function toggleBit(num: number, bit: number): void | Error {
+function toggleBit(num: number, bit: number): number {
 	if (num < 0 || bit < 0) throw new Error(errNumberNegative);
 	if (!Number.isInteger(num) || !Number.isInteger(bit))
 		throw new Error(errNumberFloat);
 
-	setBit(num, bit, checkBit(num, bit) ? 0 : 1);
+	return setBit(num, bit, checkBit(num, bit) ? 0 : 1);
 }
 
 export { checkBit, setBit, toggleBit };
