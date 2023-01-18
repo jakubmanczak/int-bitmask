@@ -1,33 +1,33 @@
 import { checkBit } from "../src";
 
-test("checkBit(331, 0) => true", () => expect(checkBit(331, 0)).toBe(true));
-test("checkBit(331, 1) => true", () => expect(checkBit(331, 1)).toBe(true));
-test("checkBit(331, 2) => false", () => expect(checkBit(331, 2)).toBe(false));
-test("checkBit(331, 3) => true", () => expect(checkBit(331, 3)).toBe(true));
-test("checkBit(331, 4) => false", () => expect(checkBit(331, 4)).toBe(false));
-test("checkBit(331, 5) => false", () => expect(checkBit(331, 5)).toBe(false));
-test("checkBit(331, 6) => true", () => expect(checkBit(331, 6)).toBe(true));
-test("checkBit(331, 7) => false", () => expect(checkBit(331, 7)).toBe(false));
-test("checkBit(331, 8) => true", () => expect(checkBit(331, 8)).toBe(true));
+test("1st bit of 331 is true", () => expect(checkBit(331, 0)).toBe(true));
+test("2nd bit of 331 is true", () => expect(checkBit(331, 1)).toBe(true));
+test("3rd bit of 331 is false", () => expect(checkBit(331, 2)).toBe(false));
+test("4th bit of 331 is true", () => expect(checkBit(331, 3)).toBe(true));
+test("5th bit of 331 is false", () => expect(checkBit(331, 4)).toBe(false));
+test("6th bit of 331 is false", () => expect(checkBit(331, 5)).toBe(false));
+test("7th bit of 331 is true", () => expect(checkBit(331, 6)).toBe(true));
+test("8th bit of 331 is false", () => expect(checkBit(331, 7)).toBe(false));
+test("9th bit of 331 is true", () => expect(checkBit(331, 8)).toBe(true));
 
-test("checkBit(331, 9) => null", () => expect(checkBit(331, 9)).toBe(null));
-test("checkBit(331, 10) => null", () => expect(checkBit(331, 10)).toBe(null));
-test("checkBit(331, 11) => null", () => expect(checkBit(331, 11)).toBe(null));
-test("checkBit(331, 12) => null", () => expect(checkBit(331, 12)).toBe(null));
-test("checkBit(331, 13) => null", () => expect(checkBit(331, 13)).toBe(null));
-test("checkBit(331, 14) => null", () => expect(checkBit(331, 14)).toBe(null));
-test("checkBit(331, 15) => null", () => expect(checkBit(331, 15)).toBe(null));
+test("bits 10-16 of 331 are null", () => {
+	expect(checkBit(331, 9)).toBe(null);
+	expect(checkBit(331, 10)).toBe(null);
+	expect(checkBit(331, 11)).toBe(null);
+	expect(checkBit(331, 12)).toBe(null);
+	expect(checkBit(331, 13)).toBe(null);
+	expect(checkBit(331, 14)).toBe(null);
+	expect(checkBit(331, 15)).toBe(null);
+});
 
-test("checkBit(331, -1) => error: cannot be negative", () =>
-	expect(() => checkBit(331, -1)).toThrow());
-test("checkBit(-331, 1) => error: cannot be negative", () =>
-	expect(() => checkBit(-331, 1)).toThrow());
-test("checkBit(-331, -1) => error: cannot be negative", () =>
-	expect(() => checkBit(-331, -1)).toThrow());
+test("negative inputs throw errors", () => {
+	expect(() => checkBit(331, -1)).toThrow();
+	expect(() => checkBit(-331, 1)).toThrow();
+	expect(() => checkBit(-331, -1)).toThrow();
+});
 
-test("checkBit(331, .5) => error: must be integers", () =>
-	expect(() => checkBit(331, 0.5)).toThrow());
-test("checkBit(331.5, 0) => error: must be integers", () =>
-	expect(() => checkBit(331.5, 0)).toThrow());
-test("checkBit(331.5, .5) => error: must be integers", () =>
-	expect(() => checkBit(331.5, 0.5)).toThrow());
+test("floating point inputs throw errors", () => {
+	expect(() => checkBit(331, 0.5)).toThrow();
+	expect(() => checkBit(331.5, 0)).toThrow();
+	expect(() => checkBit(331.5, 0.5)).toThrow();
+});
